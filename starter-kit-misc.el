@@ -122,5 +122,12 @@
 
 (set-frame-font "Inconsolata-12")
 
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
+(require 'auto-complete-cpp)
+(ac-c++-init)
+
+
 (provide 'starter-kit-misc)
 ;;; starter-kit-misc.el ends here

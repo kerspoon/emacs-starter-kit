@@ -25,5 +25,9 @@
 (require 'auto-complete-python)
 (ac-ropemacs-init)
 
+(add-hook 'python-mode-hook '(lambda ()
+                    (auto-complete-mode t)))
+
+
 (provide 'starter-kit-python)
 ;;; starter-kit-python.el ends here
