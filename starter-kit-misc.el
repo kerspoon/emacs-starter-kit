@@ -120,5 +120,7 @@
   '(eval-after-load 'zenburn
      '(set-face-background 'mumamo-background-chunk-submode "gray22")))
 
+(set-frame-font "Inconsolata-12")
+
 (provide 'starter-kit-misc)
 ;;; starter-kit-misc.el ends here
