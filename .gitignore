@@ -1,6 +1,5 @@
 loaddefs.el*
 backups/*
-Pymacs-0.23/*
 auto-save-list
 custom.el
 *elc
@@ -8,6 +7,7 @@ places
 url/cookies
 elpa-to-submit/jabber/jabber.info
 elpa-to-submit/nxhtml/etc/schema/xhtml-loader.rnc
+elpa-to-submit/Pymacs-0.23/*
 thumbs/*
 oddmuse/*
 .newsrc-dribble
