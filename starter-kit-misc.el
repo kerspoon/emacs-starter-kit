@@ -18,6 +18,7 @@
 (prefer-coding-system 'utf-8)
 
 (setq visible-bell t
+      mouse-drag-copy-region nil
       font-lock-maximum-decoration t
       inhibit-startup-message t
       transient-mark-mode t
