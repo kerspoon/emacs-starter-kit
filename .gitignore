@@ -1,5 +1,6 @@
 loaddefs.el*
 backups/*
+Pymacs-0.23/*
 auto-save-list
 custom.el
 *elc
