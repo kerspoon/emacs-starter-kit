@@ -9,6 +9,8 @@
 ;; You should add registers here for the files you edit most often.
 
 (dolist (r `((?i (file . ,(concat dotfiles-dir "init.el")))
+             (?c (file . ,(concat dotfiles-dir "custom.el")))
+             (?m (file . ,(concat dotfiles-dir "starter-kit-misc.el")))
              (?b (file . ,(concat dotfiles-dir "starter-kit-bindings.el")))
              (?r (file . ,(concat dotfiles-dir "starter-kit-registers.el")))))
   (set-register (car r) (cadr r)))

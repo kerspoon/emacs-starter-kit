@@ -16,9 +16,6 @@
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
-;; Turn on the menu bar for exploring new modes
-(global-set-key [f1] 'menu-bar-mode)
-
 ;; Use regex searches by default.
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
