@@ -6,7 +6,11 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (tool-bar-mode -1)
+  (menu-bar-mode t)
+  (scroll-bar-mode 'right)
   (blink-cursor-mode -1))
+
+(cua-mode t)
 
 (mouse-wheel-mode t)
 (set-terminal-coding-system 'utf-8)
@@ -45,9 +49,6 @@
 
 ;; Enable syntax highlighting for older Emacsen that have it off
 (global-font-lock-mode t)
-
-;; You really don't need this; trust me.
-(menu-bar-mode -1)
 
 ;; Save a list of recent files visited.
 (recentf-mode 1)
@@ -120,14 +121,13 @@
   '(eval-after-load 'zenburn
      '(set-face-background 'mumamo-background-chunk-submode "gray22")))
 
-(set-frame-font "Inconsolata-12")
+(set-frame-font "Inconsolata-11")
 
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
 (require 'auto-complete-cpp)
 (ac-c++-init)
-
 
 (provide 'starter-kit-misc)
 ;;; starter-kit-misc.el ends here
