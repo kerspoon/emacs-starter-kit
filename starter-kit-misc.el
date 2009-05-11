@@ -2,15 +2,16 @@
 ;;
 ;; Part of the Emacs Starter Kit
 
+(cua-mode t)
+
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (tool-bar-mode -1)
   (menu-bar-mode t)
   (set-scroll-bar-mode 'right)
+  (setq x-select-enable-clipboard t)
   (blink-cursor-mode -1))
-
-(cua-mode t)
 
 (mouse-wheel-mode t)
 (set-terminal-coding-system 'utf-8)
@@ -147,6 +148,7 @@
 (global-set-key [f6]            'delete-other-windows)
 (global-set-key [f7]            'keyboard-quit)
 (global-set-key [f8]            'eshell)
+(global-set-key [f11]           'fullscreen)
 (global-set-key [C-kp-subtract] 'quick-calc)
 
 ;;; ----------------------------------------------------------------------------
@@ -198,6 +200,38 @@
      (info-xref ((t (:foreground "#729fcf"))))
      (info-xref-visited ((t (:foreground "#ad7fa8"))))
      )))
+
+;;; ----------------------------------------------------------------------------
+
+(defun fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+                       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+
+;;; ----------------------------------------------------------------------------
+
+(easy-menu-define jb-menu global-map "JB"
+  '("JB"
+    ["Replace" query-replace-regexp]
+    ["Calculator" quick-calc]
+    ["Toggle full-screen" fullscreen]
+    ["Cleanup" cleanup-buffer]
+    ["IMenu" ido-imenu]
+    ["Lossage" view-lossage]
+    ["----" nil]
+    
+    ("Files" ;; submenu
+     ["home" (dired "~")]
+     ["work" (dired "~/Work")]
+     ["custom" (jump-to-register ?c)]
+     ["----" nil]
+     ["init" (jump-to-register ?i)]
+     ["bindings" (jump-to-register ?b)]
+     ["registers" (jump-to-register ?r)])
+    
+    ["----" nil]
+    ["Kill" kill-emacs]
+    ))
 
 ;;; ----------------------------------------------------------------------------
 (provide 'starter-kit-misc)
