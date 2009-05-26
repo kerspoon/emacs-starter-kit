@@ -15,4 +15,5 @@ oddmuse/*
 /#.newsrc-dribble#
 .svn
 .DS_Store
-image-dired
+image-dired/
+elim/
