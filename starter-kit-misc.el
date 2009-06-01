@@ -13,6 +13,7 @@
   (setq x-select-enable-clipboard t)
   (blink-cursor-mode -1))
 
+(column-number-mode t)
 (mouse-wheel-mode t)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -207,6 +208,14 @@
   (interactive)
   (set-frame-parameter nil 'fullscreen
                        (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+
+;; http://stackoverflow.com/questions/92971/how-do-i-set-the-size-of-emacs-window
+;; http://www.gnu.org/software/emacs/windows/old/faq4.html
+
+;; (set-frame-width (selected-frame) 80)
+;; (set-frame-height (selected-frame) 60))
+;; (set-frame-position (selected-frame) 10 30)
+
 
 ;;; ----------------------------------------------------------------------------
 
