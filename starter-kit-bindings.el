@@ -16,6 +16,10 @@
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
+;; Font size
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+
 ;; Use regex searches by default.
 (global-set-key "\C-s" 'isearch-forward-regexp)
 (global-set-key "\C-r" 'isearch-backward-regexp)
@@ -39,6 +43,9 @@
 (windmove-default-keybindings) ;; Shift+direction
 (global-set-key "\C-xO" (lambda () (interactive) (other-window -1))) ;; back one
 (global-set-key "\C-x\C-o" (lambda () (interactive) (other-window 2))) ;; forward two
+
+;; Indentation help
+(global-set-key (kbd "C-x ^") 'join-line)
 
 ;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)
