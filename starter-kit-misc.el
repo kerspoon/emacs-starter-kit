@@ -21,6 +21,7 @@
 
 (setq visible-bell t
       mouse-drag-copy-region nil
+      echo-keystrokes 0.1
       font-lock-maximum-decoration t
       inhibit-startup-message t
       transient-mark-mode t
