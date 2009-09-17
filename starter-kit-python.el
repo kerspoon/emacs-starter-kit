@@ -23,7 +23,7 @@
 
 ;; Initialize autocomplete
 (require 'auto-complete-python)
-(ac-ropemacs-init)
+;; (ac-ropemacs-init)
 
 (add-hook 'python-mode-hook '(lambda ()
                     (auto-complete-mode t)))

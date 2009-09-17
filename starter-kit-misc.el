@@ -18,6 +18,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+(global-visual-line-mode 1)
 
 (setq visible-bell t
       mouse-drag-copy-region nil
@@ -73,7 +74,6 @@
 (set-default 'indicate-empty-lines t)
 (set-default 'imenu-auto-rescan t)
 
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 (defvar coding-hook nil
