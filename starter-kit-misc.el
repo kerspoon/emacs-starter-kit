@@ -14,6 +14,7 @@
   (blink-cursor-mode -1))
 
 (column-number-mode t)
+(add-hook 'before-make-frame-hook 'turn-off-tool-bar)
 (mouse-wheel-mode t)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -67,7 +68,7 @@
   (setq ido-enable-prefix nil
         ido-enable-flex-matching t
         ido-create-new-buffer 'always
-        ido-use-filename-at-point t
+        ido-use-filename-at-point 'guess
         ido-max-prospects 10))
 
 (set-default 'indent-tabs-mode nil)
@@ -121,10 +122,11 @@
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
 
-(eval-after-load 'nxhtml
+(eval-after-load 'mumamo
   '(eval-after-load 'zenburn
      '(set-face-background 'mumamo-background-chunk-submode "gray22")))
 
+<<<<<<< HEAD:starter-kit-misc.el
 ;;; ----------------------------------------------------------------------------
 
 (set-frame-font "Inconsolata-9")
@@ -244,5 +246,11 @@
     ))
 
 ;;; ----------------------------------------------------------------------------
+=======
+;; make emacs use the clipboard
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
+>>>>>>> 2474c8b3ed5f1857e9d1df92cf215b1881f5e5c8:starter-kit-misc.el
 (provide 'starter-kit-misc)
 ;;; starter-kit-misc.el ends here
