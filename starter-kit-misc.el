@@ -11,11 +11,12 @@
   (menu-bar-mode t)
   (set-scroll-bar-mode 'right)
   (setq x-select-enable-clipboard t)
+  (mouse-wheel-mode t)
   (blink-cursor-mode -1))
 
 (column-number-mode t)
 (add-hook 'before-make-frame-hook 'turn-off-tool-bar)
-(mouse-wheel-mode t)
+
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
@@ -31,6 +32,7 @@
       delete-by-moving-to-trash t
       shift-select-mode nil
       truncate-partial-width-windows nil
+      delete-by-moving-to-trash nil
       uniquify-buffer-name-style 'forward
       whitespace-style '(trailing lines space-before-tab
                                   indentation space-after-tab)
@@ -124,7 +126,17 @@
 
 (eval-after-load 'mumamo
   '(eval-after-load 'zenburn
-     '(set-face-background 'mumamo-background-chunk-submode "gray22")))
+     '(ignore-errors (set-face-background
+                      'mumamo-background-chunk-submode "gray22"))))
+
+;; Platform-specific stuff
+(when (eq system-type 'darwin)
+  ;; Work around a bug on OS X where system-name is FQDN
+  (setq system-name (car (split-string system-name "\\.")))
+  ;; Work around a bug where environment variables aren't set correctly
+  (require 'osx-plist)
+  (when (file-exists-p "~/.MacOSX/environment.plist")
+    (osx-plist-update-environment)))
 
 ;;; ----------------------------------------------------------------------------
 
