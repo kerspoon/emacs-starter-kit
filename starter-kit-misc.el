@@ -126,7 +126,6 @@
   '(eval-after-load 'zenburn
      '(set-face-background 'mumamo-background-chunk-submode "gray22")))
 
-<<<<<<< HEAD:starter-kit-misc.el
 ;;; ----------------------------------------------------------------------------
 
 (set-frame-font "Inconsolata-9")
@@ -154,6 +153,7 @@
 (global-set-key [f8]            'eshell)
 (global-set-key [f11]           'fullscreen)
 (global-set-key [C-kp-subtract] 'quick-calc)
+(global-set-key [mouse-2]       'nil)
 
 ;;; ----------------------------------------------------------------------------
 
@@ -246,11 +246,6 @@
     ))
 
 ;;; ----------------------------------------------------------------------------
-=======
-;; make emacs use the clipboard
-(setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
->>>>>>> 2474c8b3ed5f1857e9d1df92cf215b1881f5e5c8:starter-kit-misc.el
 (provide 'starter-kit-misc)
 ;;; starter-kit-misc.el ends here
