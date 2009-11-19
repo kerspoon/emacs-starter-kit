@@ -76,6 +76,4 @@
 (if (file-exists-p user-specific-dir)
   (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 
-(set-frame-font "Inconsolata-9")
-
 ;;; init.el ends here
