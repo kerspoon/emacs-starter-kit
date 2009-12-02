@@ -1,3 +1,4 @@
+;; http://www.emacswiki.org/emacs/BrowseAproposURL
 
 (setq apropos-url-alist
       '(("^g:? +\\(.*\\)" . ;; Google Web 
