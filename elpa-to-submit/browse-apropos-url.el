@@ -1,7 +1,10 @@
 ;; http://www.emacswiki.org/emacs/BrowseAproposURL
 
+(require 'browse-url)
+
 (setq apropos-url-alist
-      '(("^g:? +\\(.*\\)" . ;; Google Web 
+      '(
+        ("^g:? +\\(.*\\)" . ;; Google Web 
          "http://www.google.com/search?q=\\1")
 
         ("^g?w:? +\\(.*\\)" .  ;; Google Wikipedia 
@@ -22,6 +25,8 @@
         ("^hs:? +\\(.*\\)" . ;; Haskell
 	 "http://holumbus.fh-wedel.de/hayoo/hayoo.html?query=\\1")
 
+        ("^\\(.*\\)" . ;; Default
+         "http://www.google.com/search?q=\\1")
         ))
 
 ;; Don't know if it's the best way , but it seemed to work. (Requires emacs >= 20)
@@ -42,4 +47,3 @@
   (browse-apropos-url (concat text " " (buffer-substring min max)) new-window))
 
 (provide 'browse-apropos-url)
-
