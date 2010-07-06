@@ -2,7 +2,12 @@
 ;;
 ;; Part of the Emacs Starter Kit
 
+;; http://stackoverflow.com/questions/92971/how-do-i-set-the-size-of-emacs-window
+;; http://www.gnu.org/software/emacs/windows/old/faq4.html
 
+;; (set-frame-width (selected-frame) 80)
+;; (set-frame-height (selected-frame) 60))
+;; (set-frame-position (selected-frame) 10 30)
 
 ;;; ----------------------------------------------------------------------------
 
