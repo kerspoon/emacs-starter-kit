@@ -3,6 +3,46 @@
 ;; Part of the Emacs Starter Kit
 
 
+(dired "D:/My Dropbox/")
+(dired "C:/Documents and Settings/james/My Documents/")
+(find-file "D:/My Dropbox/PlainText/Todo.txt")
+
+(turn-off-auto-fill)
+(auto-fill-mode -1)
+
+(add-hook 'text-mode-hook 'turn-off-auto-fill)
+
+;;; ---------------------------------------------------------------------------
+
+(require 'dired-x) 
+(setq dired-omit-files 
+      (rx (or (seq bol (? ".") "#")         ;; emacs autosave files 
+              (seq "~" eol)                 ;; backup-files 
+              (seq bol "svn" eol)           ;; svn dirs 
+              (seq ".pyc" eol)
+              ))) 
+(setq dired-omit-extensions 
+      (append dired-latex-unclean-extensions 
+              dired-bibtex-unclean-extensions 
+              dired-texinfo-unclean-extensions)) 
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1))) 
+(put 'dired-find-alternate-file 'disabled nil)
+
+;;; ---------------------------------------------------------------------------
+
+(defun uniquify-region-lines (beg end)
+    "Remove duplicate adjacent lines in region."
+    (interactive "*r")
+    (save-excursion
+      (goto-char beg)
+      (while (re-search-forward "^\\(.*\n\\)\\1+" end t)
+        (replace-match "\\1"))))
+  
+(defun uniquify-buffer-lines ()
+    "Remove duplicate adjacent lines in the current buffer."
+    (interactive)
+    (uniquify-region-lines (point-min) (point-max)))
+
 ;;; ---------------------------------------------------------------------------
 
 ;; http://stackoverflow.com/questions/92971/how-do-i-set-the-size-of-emacs-window
@@ -56,6 +96,7 @@
   (interactive)
   (set-frame-parameter nil 'fullscreen
                        (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+
 
 ;;; ---------------------------------------------------------------------------
 
